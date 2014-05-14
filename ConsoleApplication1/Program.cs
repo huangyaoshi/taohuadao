@@ -494,17 +494,6 @@ namespace ConsoleApplication1
             }
             return sb.ToString();
         }
-
-        private static string WebServiceTest()
-        {
-            using (ServiceReference1.WebServiceSoapClient c = new ServiceReference1.WebServiceSoapClient())
-            {
-                ServiceReference1.MyHeader header = new ServiceReference1.MyHeader();
-                header.UserID = "admin";
-                header.PassWord = "admin";
-                return c.HelloWorld2(header, "qqq");
-            }
-        }
     }
 
     public abstract class StaticClass1
