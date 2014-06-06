@@ -15,22 +15,34 @@ namespace ConsoleApplication1
 {
     class Program
     {
-        delegate int XXX(int a, int b);
-        static XXX x;
         static void Main(string[] args)
         {
-            //Dictionary<string, string> dic = new Dictionary<string, string>();
-            //dic.Add("b", "B");
-            //dic.Add("1", "11");
-            //dic.Add("a", "A");
-            //dic.Add("0", "00");
-            //Console.WriteLine(dic.ElementAt(0).Key + ":" + dic.ElementAt(0).Value);
-            //Console.WriteLine(dic.ElementAt(1).Key + ":" + dic.ElementAt(1).Value);
-            //Console.WriteLine(dic.ElementAt(2).Key + ":" + dic.ElementAt(2).Value);
-            //Console.WriteLine(dic.ElementAt(3).Key + ":" + dic.ElementAt(3).Value);
-            //Console.ReadKey();
-            Console.WriteLine(JsonConvert.DeserializeObject<AClass>(JsonConvert.SerializeObject(new AClass { ID = 1 })).ID);
+            // 异步方式
+            //AsyncMethod(0);
+
+            System.Threading.Thread.Sleep(5000);
             Console.ReadKey();
+        }
+        // 异步操作
+        private static async void AsyncMethod(int input)
+        {
+            Console.WriteLine("进入异步操作！");
+            var resultTask = AsyncWork(input);
+            Console.WriteLine("退出异步操作！");
+            int i = await resultTask;
+            Console.WriteLine("结果:" + i);
+        }
+
+        // 模拟耗时操作（异步方法）
+        private static async Task<int> AsyncWork(int val)
+        {
+            for (int i = 0; i < 5; ++i)
+            {
+                Console.WriteLine("耗时操作{0}", i);
+                await Task.Delay(1000);
+                val++;
+            }
+            return val;
         }
 
         //static void Main(string[] args)
