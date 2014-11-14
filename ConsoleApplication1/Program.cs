@@ -20,7 +20,7 @@ namespace ConsoleApplication1
             // 异步方式
             //AsyncMethod(0);
 
-            System.Threading.Thread.Sleep(5000);
+            //System.Threading.Thread.Sleep(5000);
             Console.ReadKey();
         }
         // 异步操作
