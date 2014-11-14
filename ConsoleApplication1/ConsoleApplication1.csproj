@@ -68,8 +68,6 @@
     <Compile Include="Base.cs" />
     <Compile Include="FileTest.cs" />
     <Compile Include="EventTest.cs" />
-    <Compile Include="Hanxu.cs" />
-    <Compile Include="InterView.cs" />
     <Compile Include="MediaHelper.cs" />
     <Compile Include="Mp3.cs" />
     <Compile Include="ParallelTry.cs" />
